@@ -1,0 +1,26 @@
+Source: libtest-identity-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: gregor herrmann <gregoa@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper (>= 8),
+               libmodule-build-perl
+Build-Depends-Indep: perl,
+                     libtest-pod-perl
+Standards-Version: 3.9.6
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-perl/packages/libtest-identity-perl.git
+Vcs-Git: git://anonscm.debian.org/pkg-perl/packages/libtest-identity-perl.git
+Homepage: https://metacpan.org/release/Test-Identity
+
+Package: libtest-identity-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends}
+Description: test module that asserts the referential identity of a reference
+ Test::Identity provides a single testing function, identical. It asserts that
+ a given reference is as expected; that is, it either refers to the same
+ object or is undef. It is similar to Test::More::is except that it uses
+ refaddr, ensuring that it behaves correctly even if the references under test
+ are objects that overload stringification or numification. It also provides
+ better diagnostics if the test fails.
